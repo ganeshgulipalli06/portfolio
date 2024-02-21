@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Web Developer</title>
+    <style>
+        /* Add your global styles here */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth; /* Enable smooth scrolling */
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Navigation styles */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Section styles */
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        /* Portfolio styles */
+        #portfolio {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .project {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .project h3 {
+            margin: 20px 0;
+        }
+
+        .project p {
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .project a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* Skills styles */
+        #skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px;
+        }
+
+        .skill {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            width: 200px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+        }
+
+        .skill img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .skill h3 {
+            margin: 20px 0;
+        }
+
+        /* Contact styles */
+        #contact {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact label {
+            margin-bottom: 10px;
+        }
+
+        #contact input,
+        #contact textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #contact button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .lightbox img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Media queries for responsiveness */
+
+        @media only screen and (max-width: 768px) {
+            section {
+                padding: 30px;
+            }
+
+            #portfolio {
+                padding: 30px;
+            }
+
+            .project {
+                width: 100%;
+            }
+
+            .lightbox-content {
+                max-width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            header img {
+                width: 80px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav a {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="your-logo.png" alt="Logo">
+        <h1>Your Name</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Your HTML content remains unchanged -->
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Welcome to my portfolio! I am a passionate web developer with expertise in creating dynamic and
+            interactive websites. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill" onclick="showSkillInfo('HTML5')">
+            <img src="html5-icon.png" alt="HTML5">
+            <h3>HTML5</h3>
+        </div>
+        <div class="skill" onclick="showSkillInfo('CSS3')">
+            <img src="css3-icon.png" alt="CSS3">
+            <h3>CSS3</h3>
+        </div>
+        <!-- Add more skills as needed -->
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="project" onclick="showProjectDetails('Project 1', 'A creative and interactive portfolio showcasing my skills and projects. Built using HTML, CSS, and JavaScript.', 'https://example.com/project1')">
+            <img src="project1-screenshot.jpg" alt="Project 1">
+            <h3>Awesome Portfolio Website</h3>
+            <p>A creative and interactive portfolio showcasing my skills and projects. Built using HTML, CSS, and JavaScript.</p>
+            <a href="https://example.com/project1" target="_blank">Visit Project</a>
+        </div>
+        <div class="project" onclick="showProjectDetails('Project 2', 'An engaging blog platform with user authentication, comments, and responsive design. Developed with React and Node.js.', 'https://example.com/project2')">
+            <img src="project2-screenshot.jpg" alt="Project 2">
+            <h3>Dynamic Blog Platform</h3>
+            <p>An engaging blog platform with user authentication, comments, and responsive design. Developed with React and Node.js.</p>
+            <a href="https://example.com/project2" target="_blank">Visit Project</a>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="submitForm(event)">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Your Name - Web Developer</p>
+    </footer>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" onclick="closeLightbox()">&times;</span>
+            <h2 id="lightbox-title"></h2>
+            <p id="lightbox-description"></p>
+            <a href="#" id="lightbox-link" target="_blank">Visit Project</a>
+        </div>
+    </div>
+
+    <script>
+        function showSkillInfo(skillName) {
+            alert('You clicked on ' + skillName);
+            // Add more functionality as needed
+        }
+
+        function showProjectDetails(title, description, link) {
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox-description').textContent = description;
+            document.getElementById('lightbox-link').href = link;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            alert('Form submitted!'); // Replace with actual form submission logic
+        }
+    </script>
+</body>
+
+</html>
