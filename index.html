@@ -23,12 +23,15 @@
             background-color: #333;
             color: white;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          
         }
 
         header img {
-            width: 100px; /* Adjust the width as needed */
-            height: auto;
+            width: 120px; /* Adjust the width as needed */
+            height: 120px; /* Adjust the height as needed */
             border-radius: 50%;
         }
 
@@ -56,6 +59,8 @@
         section {
             padding: 50px;
             text-align: center;
+            background-color: #fff; /* Set section background color */
+            border-bottom: 2px solid #ddd; /* Add border at the bottom of each section */
         }
 
         /* Portfolio styles */
@@ -69,7 +74,7 @@
         }
 
         .project {
-            background-color: #fff;
+            background-color: #f9f9f9; /* Set project background color */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px;
@@ -114,6 +119,7 @@
             justify-content: space-around;
             flex-wrap: wrap;
             padding: 50px;
+            background-color: #f4f4f4; /* Set skills background color */
         }
 
         .skill {
@@ -144,7 +150,7 @@
 
         /* Contact styles */
         #contact {
-            background-color: #fff;
+            background-color: #f9f9f9; /* Set contact background color */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 30px;
@@ -262,8 +268,9 @@
 
 <body>
     <header>
-        <img src="your-logo.png" alt="Logo">
-        <h1>Your Name</h1>
+        <img src="./imgs/profile-pic.png" alt="Logo">
+        <h1>Gulipalli Ganesh</h1>
+        <h1>Web Developer</h1>
     </header>
 
     <nav>
@@ -286,12 +293,24 @@
     <section id="skills">
         <h2>Skills</h2>
         <div class="skill" onclick="showSkillInfo('HTML5')">
-            <img src="html5-icon.png" alt="HTML5">
+            <img src="./imgs/html.png" alt="HTML5" style="width: 100px; height: 100px;">
             <h3>HTML5</h3>
         </div>
         <div class="skill" onclick="showSkillInfo('CSS3')">
-            <img src="css3-icon.png" alt="CSS3">
+            <img src="./imgs/css1.jpg" alt="CSS3" style="width: 100px; height: 100px;">
             <h3>CSS3</h3>
+        </div>
+        <div class="skill" onclick="showSkillInfo('CSS3')">
+            <img src="./imgs/bootstrap.jpg" alt="CSS3">
+            <h3>Bootstrap</h3>
+        </div>
+        <div class="skill" onclick="showSkillInfo('CSS3')">
+            <img src="./imgs/java script.jpg" alt="CSS3">
+            <h3>Java script</h3>
+        </div>
+        <div class="skill" onclick="showSkillInfo('CSS3')">
+            <img src="./imgs/react.jpg" alt="CSS3">
+            <h3>React Js</h3>
         </div>
         <!-- Add more skills as needed -->
     </section>
