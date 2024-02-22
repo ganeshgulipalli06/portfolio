@@ -155,30 +155,50 @@
             background-color: #f9f9f9; /* Set contact background color */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            max-width: 400px;
-            margin: auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            margin-bottom: 20px;
+        }
+
+        #contact .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        #contact .contact-info div {
+            text-align: left;
+            max-width: 300px;
         }
 
         #contact form {
-            display: flex;
-            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
         }
 
         #contact label {
+            display: block;
             margin-bottom: 10px;
+            text-align: left;
         }
 
         #contact input,
         #contact textarea {
-            margin-bottom: 20px;
+            width: 100%;
             padding: 10px;
+            margin-bottom: 20px;
             border-radius: 5px;
             border: 1px solid #ddd;
         }
 
         #contact button {
-            padding: 10px 20px;
+            width: 100%;
+            padding: 10px;
             background-color: #333;
             color: white;
             border: none;
@@ -264,6 +284,28 @@
             nav a {
                 padding: 10px;
             }
+
+            #skills {
+                padding: 30px;
+            }
+
+            .skill img {
+                width: 60px;
+                height: 60px;
+            }
+
+            #contact {
+                padding: 30px;
+            }
+
+            #contact .contact-info div {
+                max-width: none;
+                width: 100%;
+            }
+
+            #contact form {
+                max-width: none;
+            }
         }
     </style>
 </head>
@@ -271,8 +313,10 @@
 <body>
     <header>
         <img src="./imgs/profile-pic.png" alt="Logo">
-        <h1>Gulipalli Ganesh</h1>
-        <h1>Web Developer</h1>
+        <div>
+            <h1>Gulipalli Ganesh</h1>
+            <h2>Web Developer</h2>
+        </div>
     </header>
 
     <nav>
@@ -336,6 +380,21 @@
 
     <section id="contact">
         <h2>Contact</h2>
+        <div class="contact-info">
+            <div>
+                <h3>Email</h3>
+                <p>ganeshgu;ipalli963@gmail.com</p>
+            </div>
+            <div>
+                <h3>Phone</h3>
+                <p>Contact in Email</p>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p>Eluru,Andhrapradesh, india</p>
+            </div>
+        </div>
+
         <form onsubmit="submitForm(event)">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -381,11 +440,4 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        function submitForm(event) {
-            event.preventDefault();
-            alert('Form submitted!'); // Replace with actual form submission logic
-        }
-    </script>
-</body>
-
-</html>
+        function submitForm(event
